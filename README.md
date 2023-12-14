@@ -33,6 +33,8 @@ In the frontmatter, you need to set four pieces of information.
 3. `muckrock_organization`: The slug of the organization you want the request to be associated with. You can get it from the url of your organization. For example, the organization with the url of https://www.muckrock.com/organization/the-foia-bakery/ has the slug `the-foia-bakery`.
 4. `start_date`: Don't send the request until it's on or after this date.
 
+See the some of [my request templates for examples](https://github.com/fgregg/periodic-foia/tree/main/forest_requests).
+
 ## Request Scheduling
 On the first day of every month, we'll try to send an requests for all the request templates. Before we submit a request, we check to make sure that there is no request that has already been made to the same agency with the same title and body. If there is, then we do not submit, so we don't worry about duplication.
 
