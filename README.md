@@ -1,4 +1,4 @@
-# periodic-foia
+# Periodic FOIA
 Project to make periodic FOIA requests through MuckRock.
 
 ## Author request templates
