@@ -28,5 +28,7 @@ jobs:
           pip install git+https://github.com/fgregg/python-muckrock.git#egg=python-muckrock
 
       - name: send forest's FOIAs
+        env:
+          MUCKROCK_API_KEY: ${{ secrets.FOREST_MUCKROCK_API_KEY }}
         run: foia_send forest_requests/* -n
 
