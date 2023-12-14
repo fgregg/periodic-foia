@@ -10,6 +10,17 @@ import muckrock
 client = muckrock.MuckRock(token=os.getenv("MUCKROCK_API_KEY"))
 
 
+def yearly_dates():
+
+    current_date = datetime.date.today()
+
+    previous_year = str(
+        (datetime.date(current_date.year, 1, 1) - datetime.timedelta(days=1)).year
+    )
+
+    return {"previous_year": previous_year}
+
+
 def quarterly_dates(reference_date=None):
 
     # Use the current date as reference if none is provided
@@ -62,7 +73,7 @@ def month_dates():
 
 
 def date_strings():
-    return quarterly_dates() | month_dates()
+    return quarterly_dates() | month_dates() | yearly_dates()
 
 
 @click.command()
@@ -114,7 +125,7 @@ def process_request(filenames, yes, no):
         except AssertionError as err:
             raise click.ClickException(err)
 
-        if request['start_date'] and request['start_date'] > datetime.date.today():
+        if request["start_date"] and request["start_date"] > datetime.date.today():
             click.echo("It is before this request's template's start date.")
         elif any(
             body in request["communications"][0]["communication"]
