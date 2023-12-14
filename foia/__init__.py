@@ -18,7 +18,25 @@ def yearly_dates():
         (datetime.date(current_date.year, 1, 1) - datetime.timedelta(days=1)).year
     )
 
-    return {"previous_year": previous_year}
+    return {"previous_year": previous_year, "current_year": str(current_date.year)}
+
+
+def fiscal_year_dates():
+
+    current_date = datetime.date.today()
+
+    if current_date.month >= 7:
+        fiscal_year_start_date = datetime.date(current_date.year - 1, 7, 1)
+        fiscal_year_end_date = datetime.date(current_date.year, 6, 30)
+    else:
+        fiscal_year_start_date = datetime.date(current_date.year - 2, 7, 1)
+        fiscal_year_end_date = datetime.date(current_date.year - 1, 6, 30)
+
+    return {
+        "previous_fiscal_year_start": fiscal_year_start_date.strftime("%B %d, %Y"),
+        "previous_fiscal_year_end": fiscal_year_end_date.strftime("%B %d, %Y"),
+        "previous_fiscal_year": f"Fiscal Year {fiscal_year_end_date.year}",
+    }
 
 
 def quarterly_dates(reference_date=None):
@@ -73,7 +91,7 @@ def month_dates():
 
 
 def date_strings():
-    return quarterly_dates() | month_dates() | yearly_dates()
+    return quarterly_dates() | month_dates() | yearly_dates() | fiscal_year_dates()
 
 
 @click.command()

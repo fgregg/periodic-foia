@@ -17,7 +17,7 @@ Records sufficient to show the number of CityKeys issued from {previous_month_st
 
 The bits at the top between the `---` lines are frontmatter, followed by the body. Muckrock will wrap the body in its location specific FOIA boilerplate.
 
-In the body and the title, the bits between curly braces will be replaced by appropriate values. Right now we support seven of these variables:
+In the body and the title, the bits between curly braces will be replaced by appropriate values. Right now we support eleven of these variables:
 
 * `{previous_month}`: The previous month styled like "October, 2023"
 * `{previous_month_start}`: The first day of the previous month styled like "October 1, 2023"
@@ -26,6 +26,10 @@ In the body and the title, the bits between curly braces will be replaced by app
 * `{previous_quarter_start}`: The first day of the previous quarter styled like "July 1, 2023"
 * `{previous_quarter_end}`: The last of the previous quarter styled like "September 30, 2023"
 * `{previous_year}`: The previous year
+* `{previous_fiscal_year}`: The US Government previous fiscal year (July 1 to June 30). The fiscal year is identified by the calendar year in which the fiscal year ends. So the fiscal year ending in June 30th, 2022 is 'Fiscal Year 2022'.
+* `{previous_fiscal_year_start}`: The first day of the previous US Government fiscal year styled like "July 1, 2021".
+* `{previous_fiscal_year_end}`: The last of of the previous US Government fiscal year styled like "June 30, 2022"
+* `{current_year}`: The current year.
 
 In the frontmatter, you need to set four pieces of information.
 
