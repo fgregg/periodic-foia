@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "foia_send"
+version = "0.1.0"
+description = "A command line tool for processing and sending FOIA requests."
+authors = [{ name = "Forest Gregg" }]
+dependencies = [
+    "click",
+    "python-frontmatter",
+    "python-muckrock"
+]
+
+[project.scripts]
+foia_send = "foia:process_request"
+
+[tool.setuptools]
+packages = ["foia"]
