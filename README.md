@@ -36,3 +36,5 @@ In the frontmatter, you need to set four pieces of information.
 ## Request Scheduling
 On the first day of every month, we'll try to send an requests for all the request templates. Before we submit a request, we check to make sure that there is no request that has already been made to the same agency with the same title and body. If there is, then we do not submit, so we don't worry about duplication.
 
+## Dry Run
+To see what would be sent, without sending a request, you can run the Dry Run github action by clicking the "Run workflow" button on [the action's page](https://github.com/fgregg/periodic-foia/actions/workflows/dry_run.yaml). 
