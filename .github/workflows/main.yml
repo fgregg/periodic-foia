@@ -21,12 +21,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - uses: shogo82148/actions-setup-perl@v1        
         
       - name: install requirements
         run: |
           pip install .
-          pip install https://codeload.github.com/fgregg/python-muckrock/zip/refs/heads/main
+          pip install https://github.com/fgregg/python-muckrock/archive/main.zip
 
       - name: send forest's FOIAs
         run: foia_send forest_requests/* -n
