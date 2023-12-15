@@ -21,7 +21,6 @@ jobs:
       - name: install requirements
         run: |
           pip install .
-          pip install git+https://github.com/fgregg/python-muckrock.git#egg=python-muckrock
 
       - name: send forest's FOIAs
         env:
