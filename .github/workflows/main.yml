@@ -29,4 +29,9 @@ jobs:
         env:
           MUCKROCK_API_KEY: ${{ secrets.FOREST_MUCKROCK_API_KEY }}
         run: foia_send forest_requests/* -y
+      - name: send miriams's FOIAs
+        env:
+          MUCKROCK_API_KEY: ${{ secrets.MIRIAM_MUCKROCK_API_KEY }}
+        run: foia_send miriam_requests/* -y
+        
 
