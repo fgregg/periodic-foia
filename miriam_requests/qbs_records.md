@@ -2,7 +2,7 @@
 agency: 3121
 title: QBS invoices, payments, and letters of engagement in {previous_quarter}
 muckrock_organization: the-foia-bakery
-start_date: 2024-01-01
+start_date: 2023-12-01
 ---
 
 Provide records sufficient to show the following:
