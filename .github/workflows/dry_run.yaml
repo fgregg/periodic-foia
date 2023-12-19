@@ -22,5 +22,5 @@ jobs:
         run: |
           pip install .
 
-      - name: send forest's FOIAs
+      - name: preview FOIAs
         run: foia_send forest_requests/*.md miriam_requests/*.md -n
