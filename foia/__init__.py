@@ -130,7 +130,7 @@ def process_request(filenames, yes, no):
         except KeyError as err:
             (missing_key,) = err.args
             raise click.ClickException(
-                f"Unrecognized variable in your request template: {missing_key}"
+                f"Unrecognized variable in your request template, {filename}: {missing_key}"
             )
 
         click.echo(f"agency: {agency['name']}")
