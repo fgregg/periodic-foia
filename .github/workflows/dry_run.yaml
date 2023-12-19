@@ -23,6 +23,4 @@ jobs:
           pip install .
 
       - name: send forest's FOIAs
-        env:
-          MUCKROCK_API_KEY: ${{ secrets.FOREST_MUCKROCK_API_KEY }}
-        run: foia_send forest_requests/* -n
+        run: foia_send forest_requests/*.md miriam_requests/*.md -n
